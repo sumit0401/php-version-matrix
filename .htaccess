@@ -1,5 +1,0 @@
-Options -Indexes
-
-<FilesMatch "^(composer\.(json|lock)|README\.md)$">
-    Require all denied
-</FilesMatch>

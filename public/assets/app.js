@@ -112,7 +112,16 @@ async function refreshInstances() {
         <td class="folder" title="${escapeHtml(i.folderPath)}">${escapeHtml(i.folderPath)}</td>
         <td>${statusBadge(i.status)}</td>
         <td><a href="http://localhost:${i.phpPort}/" target="_blank">localhost:${i.phpPort}</a></td>
-        <td><a href="/adminer.php?server=127.0.0.1:${i.dbPort}&amp;username=qloapps&amp;db=qloapps" target="_blank" rel="noopener">localhost:${i.dbPort}</a></td>
+        <td class="db-cell">
+          <div class="db-line">
+            <span class="db-tag">in app config</span>
+            <code title="Use this as the DB server address inside your app's own settings/installer — it's on the same Docker network.">${escapeHtml(i.dbName)}</code>
+          </div>
+          <div class="db-line">
+            <span class="db-tag">from host</span>
+            <a href="/adminer.php?server=127.0.0.1:${i.dbPort}&amp;username=qloapps&amp;db=qloapps" target="_blank" rel="noopener" title="Adminer / mysql CLI / GUI client from your Linux host">localhost:${i.dbPort}</a>
+          </div>
+        </td>
         <td>
           <button class="secondary" data-logs="${i.id}" data-container="php">PHP log</button>
           <button class="secondary" data-logs="${i.id}" data-container="db">DB log</button>

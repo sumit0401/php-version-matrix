@@ -114,6 +114,25 @@ th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--bor
 th { color: var(--muted); font-weight: 500; font-size: 12px; }
 td.folder { max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+.db-cell { white-space: nowrap; }
+.db-line { display: flex; align-items: center; gap: 6px; }
+.db-line + .db-line { margin-top: 4px; }
+.db-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  width: 78px;
+  flex-shrink: 0;
+}
+.db-cell code {
+  background: #0a0b0f;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 12px;
+}
+
 .badge { padding: 2px 8px; border-radius: 999px; font-size: 11px; }
 .badge.running { background: rgba(63,179,127,0.15); color: var(--good); }
 .badge.starting { background: rgba(224,168,63,0.15); color: var(--warn); }
